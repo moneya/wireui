@@ -3,7 +3,7 @@
 namespace WireUi\Http\Controllers;
 
 use Illuminate\Http\Response;
-use Livewire\Controllers\CanPretendToBeAFile;
+use Controllers\CanPretendToBeAFile;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class WireUiAssetsController extends Controller
