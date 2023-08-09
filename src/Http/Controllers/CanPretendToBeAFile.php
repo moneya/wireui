@@ -1,6 +1,6 @@
 <?php
 
-namespace Livewire\Controllers;
+namespace WireUi\Http\Controllers;
 
 trait CanPretendToBeAFile
 {
