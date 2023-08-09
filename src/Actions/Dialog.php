@@ -55,25 +55,25 @@ class Dialog extends Actionable
         return $this;
     }
 
-    #[On("wireui:confirm-success")]
+
     public function success(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::SUCCESS, $title, $description);
     }
 
-    #[On("wireui:confirm-error")]
+
     public function error(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::ERROR, $title, $description);
     }
 
-    #[On("wireui:confirm-info")]
+  
     public function info(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::INFO, $title, $description);
     }
 
-    #[On("wireui:confirm-warning")]
+    
     public function warning(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::WARNING, $title, $description);
