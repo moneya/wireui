@@ -35,7 +35,7 @@ class Dialog extends Actionable
     {
         $options['icon'] ??= self::INFO;
 
-        $this->component->dispatchBrowserEvent("wireui:{$this->getEventName()}", [
+        $this->component->dispatch("wireui:{$this->getEventName()}", [
             'options'     => $options,
             'componentId' => $this->component->id,
         ]);
@@ -47,7 +47,7 @@ class Dialog extends Actionable
     {
         $options['icon'] ??= self::QUESTION;
 
-        $this->component->dispatchBrowserEvent("wireui:confirm-{$this->getEventName()}", [
+        $this->component->dispatch("wireui:confirm-{$this->getEventName()}", [
             'options'     => $options,
             'componentId' => $this->component->id,
         ]);
@@ -55,21 +55,25 @@ class Dialog extends Actionable
         return $this;
     }
 
+    #[On("wireui:confirm-success")]
     public function success(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::SUCCESS, $title, $description);
     }
 
+    #[On("wireui:confirm-error")]
     public function error(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::ERROR, $title, $description);
     }
 
+    #[On("wireui:confirm-info")]
     public function info(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::INFO, $title, $description);
     }
 
+    #[On("wireui:confirm-warning")]
     public function warning(string $title, ?string $description = null): self
     {
         return $this->simpleDialog(self::WARNING, $title, $description);
